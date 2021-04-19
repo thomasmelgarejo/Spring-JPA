@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+<body>
+<h1>INDEX</h1>
+<table>
+    <thead class="table table-striped">
+    <tr>
+        <th scope="col">Produkt navn</th>
+        <th scope="col">Firmanavn</th>
+        <th scope="col">Produkt beskrivelse</th>
+<!--        <th scope="col"></th>-->
+<!--        <th scope="col"></th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr  scope="row" th:each="product : ${products}">
+        <td th:text="${product.name}">Productnavn</td>
+        <td th:text="${product.company.name}">Firma navn</td>
+        <td th:text="${product.description.description}">Produkt beskrivelse</td>
+        <td ><a th:href="@{'/update/' + ${product.id}}" class="btn btn-primary">Update</a>
+            <a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger">Slet</a></td>
+        <!--
+                   <td>
+                       <p th:each="category : ${recipe.categories}">
+                           <span th:text="${category.description}">min kategori</span>
+                       </p>
+                   </td>
+       -->
+<!--        <td><a class="btn btn-warning" th:href="@{'/update/' + ${recipe.id}}">Opdater</a></td>-->
+
+<!--        <td><a class="btn btn-danger" th:href="@{'/delete/' + ${recipe.id}}">Slet</a></td>-->
+    </tr>
+    </tbody>
+
+</table>
+
+<!--<a class="btn btn-primary" href="create">Opret opskrift</a>-->
+<!--<a class="btn btn-info" href="h2-console">H2-console</a>-->
+</body>
+</html>
