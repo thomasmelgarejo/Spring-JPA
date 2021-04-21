@@ -30,7 +30,13 @@ public class ProductService {
     }
 
     public void update(Product product, long id) {
-
-        productRepository.save(product);
+        Product notUpdatedProduct = productRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        notUpdatedProduct.setName(product.getName());
+        notUpdatedProduct.setPrice(product.getPrice());
+        notUpdatedProduct.setCompany(product.getCompany());
+        notUpdatedProduct.setDescription(product.getDescription());
+        //        notUpdatedProduct = product;
+//        productRepository.save(notUpdatedProduct); //mangler id her???
+        productRepository.save(notUpdatedProduct);
     }
 }

@@ -12,7 +12,7 @@
 <form action="/update" method="post" >
     <div>
         <div class="form-floating mb-3" size="20">
-            <input type="hidden" name="idProducts" th:value="${product.id}">
+            <input type="hidden" name="id" th:value="${product.id}">
             <input type="text" class="form-control" name="name" id="floatingInput" th:value="${product.name} "placeholder="name" >
             <label for="floatingInput">Name</label>
         </div>

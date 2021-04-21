@@ -47,4 +47,13 @@ public class Company {
     public void setProduct(Set<Product> product) {
         this.product = product;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Company{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", product=" + product +
+//                '}';
+//    }
 }

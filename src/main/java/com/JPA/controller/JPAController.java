@@ -21,6 +21,8 @@ public class JPAController {
 
     @GetMapping("/")
     public String index(Model model){
+        System.out.println(productService.findAll());
+
         model.addAttribute("products", productService.findAll());
         return "index";
     }
